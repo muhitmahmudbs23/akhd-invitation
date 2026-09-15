@@ -125,7 +125,6 @@ export default function Invitation({ visible }) {
         <p className="arabic bismillah-hero" lang="ar" dir="rtl">
           {copy.bismillah}
         </p>
-        <p className="bangla">{event.banglaInvite}</p>
         <p className="caps kicker">{copy.kicker}</p>
         <h1 className="hero-names">
           <span className="name">{couple.groom}</span>

@@ -8,7 +8,6 @@ export const couple = {
 
 export const event = {
   title: 'Akhd',
-  banglaInvite: 'আপনাকে সাদর আমন্ত্রণ',
   weekday: 'Saturday',
   dateLabel: '26 September 2026',
   dateDay: '26',
@@ -41,9 +40,9 @@ export const copy = {
   kicker: 'The Akhd',
   lede: 'With gratitude in our hearts, we invite you to witness our Akhd — a promise made before Allah, in the company of the people we love.',
   words:
-    'Please come as you are, and stay as long as the evening holds. There is no programme to perform, no gift to prepare. Only a quiet beginning, and the blessing of having you near it.',
+    'Please come as you are, and stay as long as the evening holds. There is no programme to perform. Only a quiet beginning, and the blessing of having you near it.',
   gifts:
-    'Please, no gifts. Your presence is the only blessing we wish for.',
+    'Your dua and your presence are all we ask for.',
   closing: 'With love, and with His blessing',
   tapHint: 'Touch the seal',
   findWay: 'Find the way',

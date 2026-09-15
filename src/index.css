@@ -24,7 +24,6 @@
   --font-caps: 'Cinzel', serif;
   --font-script: 'Great Vibes', cursive;
   --font-arabic: 'Amiri', serif;
-  --font-bangla: 'Noto Serif Bengali', serif;
   --paper: none;
 }
 
@@ -107,10 +106,22 @@ button {
   background: var(--ivory);
 }
 
+.envelope-stage.is-opening,
+.envelope-stage.is-open {
+  background: transparent;
+}
+
 .envelope-stage.is-open {
   pointer-events: none;
   visibility: hidden;
-  transition: visibility 0s linear 2.2s;
+  transition: visibility 0s linear 1.8s;
+}
+
+.envelope-stage.is-opening .env-lining,
+.envelope-stage.is-open .env-lining,
+.envelope-stage.is-opening .env-body,
+.envelope-stage.is-open .env-body {
+  opacity: 0;
 }
 
 .envelope {
@@ -141,14 +152,16 @@ button {
   transform-origin: bottom center;
 }
 
+.envelope-stage.is-opening .env-half-top,
 .envelope-stage.is-open .env-half-top {
   transform: translateY(-102%);
-  transition-delay: 0.95s;
+  transition-delay: 0.55s;
 }
 
+.envelope-stage.is-opening .env-half-bottom,
 .envelope-stage.is-open .env-half-bottom {
   transform: translateY(102%);
-  transition-delay: 0.95s;
+  transition-delay: 0.55s;
 }
 
 .env-lining {
@@ -157,12 +170,14 @@ button {
   background:
     linear-gradient(180deg, #e7ddd0 0%, #ddd2c4 100%);
   box-shadow: inset 0 0 80px rgba(70, 50, 30, 0.08);
+  transition: opacity 0.35s ease;
 }
 
 .env-body {
   position: absolute;
   inset: 0;
   z-index: 2;
+  transition: opacity 0.35s ease;
 }
 
 .env-body::after {
@@ -320,68 +335,6 @@ button {
     );
 }
 
-.letter-peek {
-  position: absolute;
-  left: 7%;
-  right: 7%;
-  top: 50%;
-  height: min(68vh, 520px);
-  z-index: 4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background: var(--pearl);
-  background-image: var(--paper);
-  background-size: cover;
-  box-shadow: 0 10px 40px rgba(50, 35, 20, 0.12);
-  transform: translateY(-42%) scale(0.94);
-  opacity: 0;
-  transition:
-    transform 1.25s var(--ease-heavy) 0.35s,
-    opacity 0.5s ease 0.35s,
-    box-shadow 1s ease 0.35s;
-}
-
-.envelope-stage.is-opening .letter-peek {
-  transform: translateY(-50%) scale(1);
-  opacity: 1;
-  box-shadow: 0 18px 50px rgba(50, 35, 20, 0.18);
-}
-
-.envelope-stage.is-open .letter-peek {
-  transform: translateY(-58%) scale(1.02);
-  opacity: 0;
-  transition:
-    transform 0.7s var(--ease-heavy),
-    opacity 0.45s ease;
-}
-
-.letter-peek .names {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 9vw, 3.4rem);
-  letter-spacing: 0.06em;
-  font-weight: 400;
-}
-
-.letter-peek .amp {
-  font-family: var(--font-script);
-  font-size: 1.6rem;
-  color: var(--ink-soft);
-  display: block;
-  margin: 0.15rem 0;
-}
-
-.letter-peek .when {
-  margin-top: 1.25rem;
-  font-family: var(--font-caps);
-  font-size: 0.68rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
 .seal-anchor {
   position: absolute;
   left: 50%;
@@ -507,9 +460,9 @@ button {
 
 .caps {
   font-family: var(--font-caps);
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  font-size: 0.68rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: var(--ink);
 }
@@ -686,14 +639,6 @@ button {
   color: var(--ink);
 }
 
-.bangla {
-  font-family: var(--font-bangla);
-  font-weight: 300;
-  font-size: clamp(1.1rem, 4.2vw, 1.5rem);
-  color: var(--ink-soft);
-  margin-bottom: 1.4rem;
-}
-
 .kicker {
   margin-bottom: 1.6rem;
 }
@@ -746,11 +691,11 @@ button {
 
 .lede {
   margin: 2.2rem auto 0;
-  max-width: 30rem;
-  font-size: clamp(1.18rem, 3.5vw, 1.42rem);
-  font-weight: 300;
+  max-width: 32rem;
+  font-size: clamp(1.35rem, 4.4vw, 1.7rem);
+  font-weight: 400;
   line-height: 1.75;
-  color: var(--ink-soft);
+  color: var(--ink);
 }
 
 .arabic {
@@ -772,24 +717,25 @@ button {
 .ayah-ref {
   margin: 1.5rem 0 1.4rem;
   color: var(--gold);
+  font-size: 0.85rem;
 }
 
 .translation {
   font-style: italic;
-  font-weight: 300;
-  font-size: clamp(1.12rem, 3.3vw, 1.34rem);
-  line-height: 1.9;
-  color: var(--ink-soft);
-  max-width: 30rem;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4.8vw, 1.85rem);
+  line-height: 1.85;
+  color: var(--ink);
+  max-width: 32rem;
   margin: 0 auto;
 }
 
 .words {
-  font-size: clamp(1.2rem, 3.6vw, 1.45rem);
-  font-weight: 300;
+  font-size: clamp(1.4rem, 4.6vw, 1.8rem);
+  font-weight: 400;
   line-height: 1.9;
   color: var(--ink);
-  max-width: 28rem;
+  max-width: 32rem;
   margin: 0 auto;
 }
 
@@ -825,19 +771,19 @@ button {
 
 .detail-title {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-size: clamp(1.75rem, 5.6vw, 2.3rem);
   line-height: 1.25;
   margin: 0.75rem 0 0.5rem;
   color: var(--ink);
 }
 
 .detail-title.is-venue {
-  font-size: clamp(1.35rem, 4.5vw, 1.85rem);
+  font-size: clamp(1.55rem, 5vw, 2.1rem);
   margin-top: 0;
 }
 
 .detail-sub {
-  font-size: 1.2rem;
+  font-size: clamp(1.28rem, 4vw, 1.5rem);
   font-weight: 400;
   color: var(--ink);
   line-height: 1.8;
@@ -858,8 +804,8 @@ button {
   display: inline-block;
   margin-top: 1.25rem;
   font-family: var(--font-caps);
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
+  font-size: 0.78rem;
+  letter-spacing: 0.24em;
   font-weight: 500;
   text-transform: uppercase;
   text-decoration: none;
@@ -899,19 +845,19 @@ button {
 .clock small {
   margin-top: 0.55rem;
   font-family: var(--font-caps);
-  font-size: 0.52rem;
-  letter-spacing: 0.28em;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
 }
 
 .gifts-copy {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 5.2vw, 2.1rem);
+  font-size: clamp(1.7rem, 5.8vw, 2.35rem);
   line-height: 1.5;
   font-weight: 400;
   color: var(--ink);
-  max-width: 26rem;
+  max-width: 28rem;
   margin: 0 auto;
 }
 

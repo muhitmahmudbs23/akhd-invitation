@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import Envelope from './components/Envelope.jsx'
 import Invitation from './components/Invitation.jsx'
 
-const OPEN_DELAY_MS = 2400
+const OPEN_DELAY_MS = 1600
 const OPEN_DELAY_REDUCED_MS = 250
 
 export default function App() {
@@ -28,7 +28,7 @@ export default function App() {
     <>
       <div className="grain" aria-hidden="true" />
       <Envelope phase={phase} onOpen={open} />
-      {phase !== 'closed' && <Invitation visible={phase === 'open'} />}
+      {phase !== 'closed' && <Invitation visible />}
     </>
   )
 }

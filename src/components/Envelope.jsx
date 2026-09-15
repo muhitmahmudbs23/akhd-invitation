@@ -1,4 +1,3 @@
-import { couple, event } from '../content.js'
 import { asset } from '../asset.js'
 
 function stageClass(phase) {
@@ -16,16 +15,6 @@ export default function Envelope({ phase, onOpen }) {
     <div className={stageClass(phase)}>
       <div className="envelope">
         <div className="env-lining" />
-
-        <div className="letter-peek" aria-hidden={phase === 'closed'}>
-          <p className="names">
-            {couple.groom}
-            <span className="amp">&</span>
-            {couple.bride}
-          </p>
-          <p className="when">{event.dateLabel}</p>
-        </div>
-
         <div className="env-body paper-fill" />
 
         <div className="env-half env-half-bottom">
