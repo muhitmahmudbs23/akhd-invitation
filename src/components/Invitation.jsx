@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { copy, couple, event, verse } from '../content.js'
+import { asset } from '../asset.js'
 import Petals from './Petals.jsx'
 
 const COUNTDOWN_UNITS = [
@@ -61,7 +62,7 @@ function SideVine({ side }) {
 }
 
 function CornerFlourish({ className }) {
-  return <img src="/jasmine-flourish.png" alt="" className={className} aria-hidden="true" />
+  return <img src={asset('jasmine-flourish.png')} alt="" className={className} aria-hidden="true" />
 }
 
 function useCountdown(iso) {
@@ -207,7 +208,7 @@ export default function Invitation({ visible }) {
       </section>
 
       <footer className="section closing" data-reveal>
-        <img src="/wax-seal.png" alt="" className="closing-seal" />
+        <img src={asset('wax-seal.png')} alt="" className="closing-seal" />
         <p className="caps">{copy.closing}</p>
         <p className="sign">
           {couple.groom} & {couple.bride}

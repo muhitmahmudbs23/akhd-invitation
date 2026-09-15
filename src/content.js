@@ -25,7 +25,7 @@ export const event = {
   mapsUrl:
     'https://www.google.com/maps/search/?api=1&query=Agrabad+Convention+Hall+Chittagong',
   appleMapsUrl: 'https://maps.apple.com/?q=Agrabad+Convention+Hall+Chittagong',
-  calendarFile: '/akhd.ics',
+  calendarFile: `${import.meta.env.BASE_URL}akhd.ics`,
 }
 
 export const verse = {
