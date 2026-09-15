@@ -37,7 +37,7 @@ export const verse = {
 
 export const copy = {
   bismillah: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
-  kicker: 'The Akhd of',
+  kicker: 'The Nikkah of',
   lede: 'With gratitude in our hearts, we invite you to witness our Akhd — a promise made before Allah, in the company of the people we love.',
   words:
     'Please come as you are, and stay as long as the evening holds. There is no programme to perform. Only a quiet beginning, and the blessing of having you near it.',
