@@ -4,10 +4,10 @@ PRODID:-//Akhd Invitation//EN
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 BEGIN:VEVENT
-UID:akhd-2026-09-26-agrabad@invitation
-DTSTAMP:20260915T120000Z
-DTSTART;TZID=Asia/Dhaka:20260926T200000
-DTEND;TZID=Asia/Dhaka:20260926T230000
+UID:akhd-2026-09-28-agrabad@invitation
+DTSTAMP:20260917T120000Z
+DTSTART;TZID=Asia/Dhaka:20260928T200000
+DTEND;TZID=Asia/Dhaka:20260928T230000
 SUMMARY:Akhd of Saidul & Atkiya
 LOCATION:Agrabad Convention Hall, Fatema Heights, 16 Agrabad C/A, Chittagong
 DESCRIPTION:You are invited to the Akhd of Abu Saidul Haq (Saidul) and Kifayat Atkiya Hoque (Atkiya) at Agrabad Convention Hall, Chittagong. Please, no gifts — your presence is the blessing.
