@@ -2,7 +2,7 @@
 export const couple = {
   groom: 'Saidul',
   groomFull: 'Abu Saidul Haq',
-  bride: 'Atkiya',
+  bride: 'Kifayet',
   brideFull: 'Kifayat Atkiya Hoque',
 }
 
